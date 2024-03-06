@@ -1,0 +1,23 @@
+{%  extends "base.html" %}index
+{% block title %}
+    Galeria nails_l3lack - salon paznokci
+{% endblock %}
+{% block content %}
+    <h2>Galeria</h2>
+
+    {% if has_permm %}
+        <p>
+            <a href="{% url 'gallery_add' %}"><b>Dodaj do galerii</b></a>
+        </p>
+    {% endif %}
+
+    {% for photo in photos %}
+        <div class="gallery_photo">
+            <li><b>{{photo.name}}</b></li>
+            <p>{{photo.description}}</p>
+            <img src="{{photo.upload.url}}" alt="{{photo.name}}"><br><br><br>
+        </div>
+
+    {% endfor %}
+
+{% endblock %}

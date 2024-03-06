@@ -1,0 +1,28 @@
+{%  extends "base.html" %}
+{% block title %}
+    Strona główna nails_l3lack - salon paznokci
+{% endblock %}
+{% block content %}
+    <h2>Opis:</h2>
+    <p>
+        Cześć. Prowadzę salon od dwóch lat. Na stronie możecie przejrzeć moje prace w galerii, a także umówić się na
+        wizytę.
+    </p>
+<br>
+    <p>
+    <a href="{% url 'gallery' %}"><b>Galeria</b></a>
+    </p>
+    <p>
+    <a href="{% url 'visit_registration' %}"><b>Rejestracja wizyty</b></a>
+    </p>
+    {% if all_visits %}
+        <p>
+            <a href="{% url 'all_visits' %}"><b>Wszystkie wizyty</b></a>
+        </p>
+    {% endif %}
+    {% if my_visits %}
+        <p>
+            <a href="{% url 'visits_list' %}"><b>Moje wizyty</b></a>
+        </p>
+    {% endif %}
+{% endblock %}

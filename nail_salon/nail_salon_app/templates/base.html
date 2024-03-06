@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="pl-PL">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="{% static 'styles.css' %}">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>{% block title %}{% endblock %}</title>
+    </head>
+    <body>
+        <div class="logo">
+            <a href="{% url 'homepage' %}"><img src="{% static 'logo00.png' %}"></a>
+        </div>
+        <h1>Nails l3lack - salon paznokci</h1>
+        {% block content %}
+        {% endblock %}
+        {% block footer %}
+        <div class="stopka">
+            <hr>
+            &copy; 2023 NAILS-l3LACK <br>
+            {{ APP_NAME }} v. {{ APP_VERSION }} {{ request.method }}<br>
+            {% if user.is_authenticated %}
+                <p>Zalogowano: {{ user.username }}</p>
+                <a href="{% url 'logout' %}">Wyloguj</a>
+            {% else %}
+                <a href="{% url 'registration' %}">Zarejestruj się</a><br>
+                <a href="{% url 'login' %}">Zaloguj</a>
+            {% endif %}
+            {% endblock %}
+        </div>
+</body>
+</html>
+
+
+

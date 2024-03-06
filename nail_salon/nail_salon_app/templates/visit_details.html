@@ -1,0 +1,20 @@
+{%  extends "base.html" %}
+{% block title %}
+    Szczegóły wizyty nails_l3lack - salon paznokci
+{% endblock %}
+{% block content %}
+    <h2>Szczegóły wizyty</h2>
+    {% if can_view_all_visits %}
+        <b>Imię:</b> {{ first_name }}
+        <br> <b>Nazwisko:</b> {{ second_name }}
+        <br> <b>E-mail:</b> {{ email }}
+        <br> <b>Telefon:</b> {{ phone }}
+        <br> <b>Data i godzina wizyty:</b> {{ datetime }}
+        <br> <b>Czas trwania wizyty:</b> {{ duration }} minut ({{ h }} h)
+        <br> <b>Typ usługi i długość (wymiar na formie):</b>{{ service }}
+        <br> <b>Dodatki:</b> {{ addons }}
+        <br> <b>Koszt:</b> {{ cost }}
+    {% else %}
+        <p>Nie masz uprawnień do przeglądania detali wizyty.</p><br><br>
+    {% endif %}
+{% endblock %}

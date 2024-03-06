@@ -1,0 +1,24 @@
+{%  extends "base.html" %}
+{% block title %}
+    Dodaj do galerii nails_l3lack - salon paznokci
+{% endblock %}
+{% block content %}
+    <h2>Dodaj do galerii</h2>
+    <p>
+        <a href="{% url 'gallery' %}"><b>Wróć do galerii</b></a>
+    </p>
+    {% if cant_add_photo != 1 %}
+        {% if added_photo %}
+            <p>Dodano zdjęcie.</p><br><br>
+        {% endif %}
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <table>
+                {{ form }}
+            </table>
+            <button type="submit">Dodaj zdjęcie</button>
+        </form>
+    {% else %}
+        <p>Nie masz uprawnień do dodawania zdjęć</p><br><br>
+    {% endif %}
+{% endblock %}

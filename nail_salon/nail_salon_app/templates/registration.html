@@ -1,0 +1,18 @@
+{%  extends "base.html" %}index
+{% block title %}
+    Rejestracja nails_l3lack - salon paznokci
+{% endblock %}
+{% block content %}
+    <h2>Rejestracja</h2>
+    {% if userexist %}
+        <p>Utworzono użytkownika {{ logname }}. Możesz się zalogować</p><br><br>
+    {% else %}
+        <form action="" method="post">
+            {% csrf_token %}
+            <table>
+                {{ form }}
+            </table>
+            <button type="submit">Zarejestruj się</button>
+        </form>
+    {% endif %}
+{% endblock %}

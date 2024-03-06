@@ -1,0 +1,4 @@
+# nail-salon-app
+This is an application for a nail salon, which serves as advertising and makes it easier to make an appointment. 
+In the application, the user can view when available dates are available and register for an appointment. The user can view the price list, services provided and choose what he or she would like to do. The owner can view this data and he can add photos of the styling he or she has made. 
+(Jest to aplikacja dla salonu stylizacji paznokci, która pełni funkcję reklamową i ułatwia umówienie się na wizytę. W aplikacji użytkownik może sprawdzić, kiedy dostępne są wolne terminy i zapisać się na wizytę. Użytkownik może przeglądać cennik, świadczone usługi i wybierać, co chciałby wykonać. Właściciel może przeglądać te dane oraz dodawać zdjęcia wykonanej przez siebie stylizacji.)

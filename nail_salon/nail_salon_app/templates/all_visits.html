@@ -1,0 +1,16 @@
+{%  extends "base.html" %}
+{% block title %}
+    Wszystkie wizyty nails_l3lack - salon paznokci
+{% endblock %}
+{% block content %}
+    <h2>Wszystkie wizyty</h2>
+    {% if can_view_all_visits %}
+        {% for visit in visits %}
+
+            <li><a href="{% url 'visit_details' visit.id%}">{{visit}}</a></li>
+
+        {% endfor %}
+    {% else %}
+        <p>Nie masz uprawnień do przeglądania wszystkich wizyt</p><br><br>
+    {% endif %}
+{% endblock %}

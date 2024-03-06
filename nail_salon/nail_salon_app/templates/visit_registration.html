@@ -1,0 +1,18 @@
+{%  extends "base.html" %}
+{% block title %}
+    Rejestracja wizyty nails_l3lack - salon paznokci
+{% endblock %}
+{% block content %}
+    <h2>Rejestracja wizyty</h2>
+    {% if visitexist %}
+        <p>Zarejestrowano wizytę.</p><br><br>
+    {% endif %}
+    <form action="" method="post">
+        {% csrf_token %}
+        <table>
+            {{ form }}
+        </table>
+        <button type="submit">Zarejestruj wizytę</button>
+    </form>
+
+{% endblock %}

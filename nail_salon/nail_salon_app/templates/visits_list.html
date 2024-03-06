@@ -1,0 +1,29 @@
+
+{%  extends "base.html" %}
+{% block title %}
+    Lista wizyt nails_l3lack - salon paznokci
+{% endblock %}
+{% block content %}
+    <h2>Lista wizyt</h2>
+    {% if can_view_my_visits %}
+        {% for visit in visits %}
+
+                <b>Imię:</b> {{ visit.first_name }}
+            <br> <b>Nazwisko:</b> {{ visit.second_name }}
+<!--            <br> <b>E-mail:</b> {{ visit.email }}-->
+<!--            <br> <b>Telefon:</b> {{ visit.phone }}-->
+            <br> <b>Data i godzina wizyty:</b> {{ visit.datetime }}
+<!--            <br> <b>Czas trwania wizyty:</b> {{ visit.duration }} minut ({{ visit.h }} h)-->
+<!--            <br> <b>Typ usługi i długość (wymiar na formie):</b>{{ visit.service_id }}-->
+<!--            <br> <b>Dodatki:</b> {{ visit.addons }}-->
+<!--            <br> <b>Koszt:</b> {{ visit.service.cost }}-->
+
+            <br><br><br>
+
+
+        {% endfor %}
+    {% else %}
+        <p>Nie masz uprawnień do przeglądania wszystkich wizyt</p><br><br>
+    {% endif %}
+{% endblock %}
+
