@@ -15,8 +15,12 @@ class HomepageView(View):
     """Widok strony domowej"""
     def get(self, request):
         if request.user.has_perm('nail_salon_app.view_all_visits'):
-            all_visits = 1
-            my_visits = 0
+            if request.user.has_perm('nail_salon_app.view_my_visits'):
+                all_visits = 1
+                my_visits = 1
+            else:
+                all_visits = 1
+                my_visits = 0
         elif request.user.has_perm('nail_salon_app.view_my_visits'):
             all_visits = 0
             my_visits = 1
